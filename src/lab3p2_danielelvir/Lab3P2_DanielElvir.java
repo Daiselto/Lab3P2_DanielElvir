@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 import javax.swing.JColorChooser;
+import javax.swing.JOptionPane;
 
 public class Lab3P2_DanielElvir {
 
@@ -153,35 +154,35 @@ public class Lab3P2_DanielElvir {
                                         case 1: {
                                             System.out.println("Ingrese la nueva placa");
                                             String placa = read.next();
-                                            ((Automovil) Vehiculo.get(index- 1)).setPlaca(placa);
+                                            ((Automovil) Vehiculo.get(index - 1)).setPlaca(placa);
                                             break;
                                         }
 
                                         case 2: {
                                             System.out.println("Ingrese la nueva marca");
                                             String marca = read.next();
-                                            ((Automovil) Vehiculo.get(index- 1)).setMarca(marca);
+                                            ((Automovil) Vehiculo.get(index - 1)).setMarca(marca);
                                             break;
                                         }
 
                                         case 3: {
                                             System.out.println("Ingrese el nuevo modelo");
                                             String modelo = read.next();
-                                            ((Automovil) Vehiculo.get(index- 1)).setModelo(modelo);
+                                            ((Automovil) Vehiculo.get(index - 1)).setModelo(modelo);
                                             break;
                                         }
 
                                         case 4: {
                                             System.out.println("Ingrese el nuevo tipo");
                                             String tipo = read.next();
-                                            ((Automovil) Vehiculo.get(index- 1)).setTipo(tipo);
+                                            ((Automovil) Vehiculo.get(index - 1)).setTipo(tipo);
                                             break;
                                         }
 
                                         case 5: {
                                             System.out.println("Ingrese el nuevo color");
                                             Color color = color = JColorChooser.showDialog(null, "Seleccione un color", Color.WHITE);
-                                            ((Automovil) Vehiculo.get(index- 1)).setColor(color);
+                                            ((Automovil) Vehiculo.get(index - 1)).setColor(color);
                                             break;
                                         }
 
@@ -190,34 +191,34 @@ public class Lab3P2_DanielElvir {
                                             System.out.println("Ingrese el nuevo año");
                                             String añostr = read.next();
                                             Date año = df.parse(añostr);
-                                            ((Automovil) Vehiculo.get(index- 1)).setAño(año);
+                                            ((Automovil) Vehiculo.get(index - 1)).setAño(año);
                                             break;
                                         }
 
                                         case 7: {
                                             System.out.println("Ingrese el nuevo tipo de combustible");
                                             String tipo = read.next();
-                                            ((Automovil) Vehiculo.get(index- 1)).setTipoCombustible(tipo);
+                                            ((Automovil) Vehiculo.get(index - 1)).setTipoCombustible(tipo);
                                             break;
                                         }
 
                                         case 8: {
                                             System.out.println("Ingrese las nuevas puertas");
                                             int puertas = leer.nextInt();
-                                            ((Automovil) Vehiculo.get(index- 1)).setNumPuertas(puertas);
+                                            ((Automovil) Vehiculo.get(index - 1)).setNumPuertas(puertas);
                                             break;
                                         }
 
                                         case 9: {
                                             System.out.println("Ingrese la nueva transmision");
                                             String transmision = read.next();
-                                            ((Automovil) Vehiculo.get(index- 1)).setTipoTransmision(transmision);
+                                            ((Automovil) Vehiculo.get(index - 1)).setTipoTransmision(transmision);
                                         }
 
                                         case 10: {
                                             System.out.println("Ingrese los nuevos asientos");
                                             int asientos = leer.nextInt();
-                                            ((Automovil) Vehiculo.get(index- 1)).setNumAsiento(asientos);
+                                            ((Automovil) Vehiculo.get(index - 1)).setNumAsiento(asientos);
                                             break;
                                         }
 
@@ -243,35 +244,35 @@ public class Lab3P2_DanielElvir {
                                         case 1: {
                                             System.out.println("Ingrese la nueva placa");
                                             String placa = read.next();
-                                            ((Motocicleta) Vehiculo.get(index- 1)).setPlaca(placa);
+                                            ((Motocicleta) Vehiculo.get(index - 1)).setPlaca(placa);
                                             break;
                                         }
 
                                         case 2: {
                                             System.out.println("Ingrese la nueva marca");
                                             String marca = read.next();
-                                            ((Motocicleta) Vehiculo.get(index- 1)).setMarca(marca);
+                                            ((Motocicleta) Vehiculo.get(index - 1)).setMarca(marca);
                                             break;
                                         }
 
                                         case 3: {
                                             System.out.println("Ingrese el nuevo modelo");
                                             String modelo = read.next();
-                                            ((Motocicleta) Vehiculo.get(index- 1)).setModelo(modelo);
+                                            ((Motocicleta) Vehiculo.get(index - 1)).setModelo(modelo);
                                             break;
                                         }
 
                                         case 4: {
                                             System.out.println("Ingrese el nuevo tipo");
                                             String tipo = read.next();
-                                            ((Motocicleta) Vehiculo.get(index- 1)).setTipo(tipo);
+                                            ((Motocicleta) Vehiculo.get(index - 1)).setTipo(tipo);
                                             break;
                                         }
 
                                         case 5: {
                                             System.out.println("Ingrese el nuevo color");
                                             Color color = color = JColorChooser.showDialog(null, "Seleccione un color", Color.WHITE);
-                                            ((Motocicleta) Vehiculo.get(index- 1)).setColor(color);
+                                            ((Motocicleta) Vehiculo.get(index - 1)).setColor(color);
                                             break;
                                         }
 
@@ -280,28 +281,28 @@ public class Lab3P2_DanielElvir {
                                             System.out.println("Ingrese el nuevo año");
                                             String añostr = read.next();
                                             Date año = df.parse(añostr);
-                                            ((Motocicleta) Vehiculo.get(index- 1)).setAño(año);
+                                            ((Motocicleta) Vehiculo.get(index - 1)).setAño(año);
                                             break;
                                         }
 
                                         case 7: {
                                             System.out.println("Ingrese la nueva velocidad maxima");
                                             double velocidad = leer.nextDouble();
-                                            ((Motocicleta) Vehiculo.get(index- 1)).setVelMax(velocidad);
+                                            ((Motocicleta) Vehiculo.get(index - 1)).setVelMax(velocidad);
                                             break;
                                         }
 
                                         case 8: {
                                             System.out.println("Ingrese el nuevo peso");
                                             double peso = leer.nextDouble();
-                                            ((Motocicleta) Vehiculo.get(index- 1)).setPeso(peso);
+                                            ((Motocicleta) Vehiculo.get(index - 1)).setPeso(peso);
                                             break;
                                         }
 
                                         case 9: {
                                             System.out.println("Ingrese el nuevo consumo de combustible");
                                             double combustible = leer.nextDouble();
-                                            ((Motocicleta) Vehiculo.get(index- 1)).setConsumo(combustible);
+                                            ((Motocicleta) Vehiculo.get(index - 1)).setConsumo(combustible);
                                             break;
                                         }
 
@@ -327,35 +328,35 @@ public class Lab3P2_DanielElvir {
                                         case 1: {
                                             System.out.println("Ingrese la nueva placa");
                                             String placa = read.next();
-                                            ((Autobus) Vehiculo.get(index- 1)).setPlaca(placa);
+                                            ((Autobus) Vehiculo.get(index - 1)).setPlaca(placa);
                                             break;
                                         }
 
                                         case 2: {
                                             System.out.println("Ingrese la nueva marca");
                                             String marca = read.next();
-                                            ((Autobus) Vehiculo.get(index- 1)).setMarca(marca);
+                                            ((Autobus) Vehiculo.get(index - 1)).setMarca(marca);
                                             break;
                                         }
 
                                         case 3: {
                                             System.out.println("Ingrese el nuevo modelo");
                                             String modelo = read.next();
-                                            ((Autobus) Vehiculo.get(index- 1)).setModelo(modelo);
+                                            ((Autobus) Vehiculo.get(index - 1)).setModelo(modelo);
                                             break;
                                         }
 
                                         case 4: {
                                             System.out.println("Ingrese el nuevo tipo");
                                             String tipo = read.next();
-                                            ((Autobus) Vehiculo.get(index- 1)).setTipo(tipo);
+                                            ((Autobus) Vehiculo.get(index - 1)).setTipo(tipo);
                                             break;
                                         }
 
                                         case 5: {
                                             System.out.println("Ingrese el nuevo color");
                                             Color color = color = JColorChooser.showDialog(null, "Seleccione un color", Color.WHITE);
-                                            ((Autobus) Vehiculo.get(index- 1)).setColor(color);
+                                            ((Autobus) Vehiculo.get(index - 1)).setColor(color);
                                             break;
                                         }
 
@@ -364,28 +365,28 @@ public class Lab3P2_DanielElvir {
                                             System.out.println("Ingrese el nuevo año");
                                             String añostr = read.next();
                                             Date año = df.parse(añostr);
-                                            ((Autobus) Vehiculo.get(index- 1)).setAño(año);
+                                            ((Autobus) Vehiculo.get(index - 1)).setAño(año);
                                             break;
                                         }
 
                                         case 7: {
                                             System.out.println("Ingrese la nueva capacidad");
                                             int capacidad = leer.nextInt();
-                                            ((Autobus) Vehiculo.get(index- 1)).setCapacidad(capacidad);
+                                            ((Autobus) Vehiculo.get(index - 1)).setCapacidad(capacidad);
                                             break;
                                         }
 
                                         case 8: {
                                             System.out.println("Ingrese el nuevo numero de ejes");
                                             int ejes = leer.nextInt();
-                                            ((Autobus) Vehiculo.get(index- 1)).setNumEjes(ejes);
+                                            ((Autobus) Vehiculo.get(index - 1)).setNumEjes(ejes);
                                             break;
                                         }
 
                                         case 9: {
                                             System.out.println("Ingrese la nueva longitud");
                                             double longitud = leer.nextDouble();
-                                            ((Autobus) Vehiculo.get(index- 1)).setLongitud(longitud);
+                                            ((Autobus) Vehiculo.get(index - 1)).setLongitud(longitud);
                                             break;
                                         }
 
@@ -414,6 +415,28 @@ public class Lab3P2_DanielElvir {
                         break;
                     } else {
                         System.out.println("Ingrese el vehiculo a eliminar");
+                        System.out.println("Así se ve la lista de Vehiculos actualmente");
+                        int i = 1;
+
+                        for (Vehiculo vehiculo : Vehiculo) {
+                            System.out.println(i + ". " + infoVehiculo(vehiculo));
+                            i++;
+                        }
+                        System.out.println("Escoja el vehiculo que desea modificar");
+                        int index = leer.nextInt();
+                        if (index >= 1 && index <= Vehiculo.size()) {
+                            int f = JOptionPane.showConfirmDialog(null, "Estas seguro de eliminar?");
+                            if (f == 0) {
+                                Vehiculo.remove(index-1);
+                                JOptionPane.showMessageDialog(null, "TV eliminado exitosamente");
+                            } else {
+                                JOptionPane.showMessageDialog(null, "No se eliminó el televisor");
+                            }
+                            
+                        } else {
+                            System.out.println("Vehiculo no encontrado");
+                            break;
+                        }
                     }
                     break;
                 }
