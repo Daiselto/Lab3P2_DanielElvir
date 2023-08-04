@@ -36,6 +36,8 @@ public class Lab3P2_DanielElvir {
                     String placa=read.nextLine();
                     System.out.println("Ingrese la Marca del Automovil");
                     String marca=read.nextLine();
+                    System.out.println("Ingrese el Modelo del Automovil");
+                    String modelo=read.nextLine();
                     System.out.println("Ingrese el tipo del Automovil");
                     String tipo=read.nextLine();
                     System.out.println("Ingrese el color del Automovil");
@@ -53,13 +55,36 @@ public class Lab3P2_DanielElvir {
                     System.out.println("Ingrese el numero de asientos");
                     int numAsientos=leer.nextInt();
                     
-                    Vehiculo.add(new Automovil(tipoCombustible, transmision, puertas, numAsientos, placa, marca, tipo, tipo, color, año));
+                    Vehiculo.add(new Automovil(tipoCombustible, transmision, puertas, numAsientos, placa, marca, modelo, tipo, color, año));
                     System.out.println("Automovil agregado exitosamente");
                     break;
                 }
 
                 case "2": {
-                    System.out.println("En construcción");
+                    System.out.println("Ingrese la placa de la Motocicleta");
+                    System.out.println("Recuerde el formato de 3 caracteres y 4 digitos");
+                    String placa=read.nextLine();
+                    System.out.println("Ingrese la Marca de la Motocicleta");
+                    String marca=read.nextLine();
+                    System.out.println("Ingrese el Modelo del Motocicleta");
+                    String modelo=read.nextLine();
+                    System.out.println("Ingrese el tipo de la Motocicleta");
+                    String tipo=read.nextLine();
+                    System.out.println("Ingrese el color de la Motocicleta");
+                    Color color=color=JColorChooser.showDialog(null, "Seleccione un color", Color.WHITE);
+                    DateFormat df = new SimpleDateFormat("yyyy");
+                    System.out.println("Ingrese el año del la Motocicleta");
+                    String añostr=read.nextLine();
+                    Date año=df.parse(añostr);
+                    System.out.println("Ingrese la velocidad maxima de la motocicleta en Km/h");
+                    double velocidad=leer.nextDouble();
+                    System.out.println("Ingrese el peso de la motocicleta en KG");
+                    double peso=leer.nextDouble();
+                    System.out.println("Ingrese el consumo del combustible en L/Km");
+                    double Consumo=leer.nextDouble();
+                    
+                    Vehiculo.add(new Motocicleta(velocidad, peso, Consumo, placa, marca, modelo, tipo, color, año));
+                    System.out.println("Motocicleta agregada exitosamente");
                     break;
                 }
 
