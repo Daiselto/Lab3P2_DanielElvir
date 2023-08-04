@@ -461,7 +461,34 @@ public class Lab3P2_DanielElvir {
                         System.out.println("Debe agregar CUALQUIER vehiculo para generar una boleta");
                         break;
                     } else {
-
+                        int i=1;
+                        int Base=525;
+                        System.out.println("Así se ve la lista de los vehiculos actualmente");
+                        for (Vehiculo vehiculo : Vehiculo) {
+                            System.out.println(i + ". " + infoVehiculo(vehiculo));
+                            i++;
+                        }
+                        System.out.println("Escoja el vehiculo para conocer su Tasa Vehicular");
+                        int index=leer.nextInt();   
+                        Vehiculo vehic = Vehiculo.get(index - 1);
+                        if (index>=1&&index<=Vehiculo.size()) {
+                            if (vehic instanceof Automovil) {
+                                Base+=1200;
+                                System.out.println("Su tasa vehicular es " + Base);
+                            }else if (vehic instanceof Motocicleta) {
+                                Base+=200;
+                                System.out.println("Su tasa vehicular es " + Base);
+                            }else if (vehic instanceof Autobus) {
+                                Base+=1000;
+                                System.out.println("Su tasa vehicular es " + Base);
+                            }else{
+                                System.out.println("Indice invalido");
+                                break;
+                            }
+                        }else{
+                            System.out.println("Indice invalido");
+                            break;
+                        }
                     }
                     break;
                 }
@@ -480,10 +507,7 @@ public class Lab3P2_DanielElvir {
             }
         }
     }
-
-    public static void modificarVehiculo() {
-        System.out.println("Ingrese el tipo de vehiculo que desea vehiculo que desea modificar");
-    }
+    
 
     public static String infoVehiculo(Vehiculo vehiculo) {
 
