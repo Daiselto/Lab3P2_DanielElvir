@@ -89,7 +89,29 @@ public class Lab3P2_DanielElvir {
                 }
 
                 case "3": {
-                    System.out.println("En construcción");
+                    System.out.println("Ingrese la placa del Autobus");
+                    System.out.println("Recuerde el formato de 3 caracteres y 4 digitos");
+                    String placa=read.nextLine();
+                    System.out.println("Ingrese la Marca del Autobus");
+                    String marca=read.nextLine();
+                    System.out.println("Ingrese el Modelo del Autobus");
+                    String modelo=read.nextLine();
+                    System.out.println("Ingrese el tipo del Autobus");
+                    String tipo=read.nextLine();
+                    System.out.println("Ingrese el color del Autobus");
+                    Color color=color=JColorChooser.showDialog(null, "Seleccione un color", Color.WHITE);
+                    DateFormat df = new SimpleDateFormat("yyyy");
+                    System.out.println("Ingrese el año del Autobus");
+                    String añostr=read.nextLine();
+                    Date año=df.parse(añostr);
+                    System.out.println("Ingrese la Capacidad de pasajeros que puede llevar el autobus");
+                    int capacidad=leer.nextInt();
+                    System.out.println("Ingrese la cantidad de ejes que tiene el autobus");
+                    int ejes=leer.nextInt();
+                    System.out.println("Ingrese la longitud en metros del autobus");
+                    double longitud=leer.nextDouble();
+                    
+                    Vehiculo.add(new Autobus(capacidad, ejes, longitud, placa, marca, modelo, tipo, color, año));
                     break;
                 }
 
