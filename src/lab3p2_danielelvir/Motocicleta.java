@@ -19,6 +19,32 @@ public class Motocicleta extends Vehiculo{
         this.Consumo = Consumo;
     }
 
+    public double getVelMax() {
+        return VelMax;
+    }
+
+    public void setVelMax(double VelMax) {
+        this.VelMax = VelMax;
+    }
+
+    public double getPeso() {
+        return Peso;
+    }
+
+    public void setPeso(double Peso) {
+        this.Peso = Peso;
+    }
+
+    public double getConsumo() {
+        return Consumo;
+    }
+
+    public void setConsumo(double Consumo) {
+        this.Consumo = Consumo;
+    }
+    
+    
+
     @Override
     public String toString() {       
         return super.toString()+"VelMax=" + VelMax +"\n" + "Peso=" + Peso +"\n" + "Consumo=" + Consumo + "\n" ;
