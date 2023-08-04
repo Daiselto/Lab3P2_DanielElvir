@@ -14,7 +14,10 @@ public class Lab3P2_DanielElvir {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        boolean seguir=true;
+        while (seguir) {            
+            
+        }
     }
     
 }
