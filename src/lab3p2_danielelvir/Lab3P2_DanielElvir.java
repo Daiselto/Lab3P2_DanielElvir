@@ -34,25 +34,39 @@ public class Lab3P2_DanielElvir {
                 case "1": {
                     System.out.println("Ingrese la placa del Automovil");
                     System.out.println("Recuerde el formato de 3 caracteres y 4 digitos");
-                    String placa = read.nextLine();
+                    String placa = read.next();
+                    if (placa.length()>0&&placa.length()<7) {
+                        System.out.println("La placa es muy larga");
+                        break;
+                    }
+                    
+                    if (placa.charAt(0)!='H') {
+                        System.out.println("La placa debe iniciar con H");
+                        break;
+                    }
+                    
+                    if (!validarPlaca(placa)) {
+                        System.out.println("No ingresó el formato especifico");
+                        break;
+                    }
                     System.out.println("Ingrese la Marca del Automovil");
-                    String marca = read.nextLine();
+                    String marca = read.next();
                     System.out.println("Ingrese el Modelo del Automovil");
-                    String modelo = read.nextLine();
+                    String modelo = read.next();
                     System.out.println("Ingrese el tipo del Automovil");
-                    String tipo = read.nextLine();
+                    String tipo = read.next();
                     System.out.println("Ingrese el color del Automovil");
                     Color color = color = JColorChooser.showDialog(null, "Seleccione un color", Color.WHITE);
                     DateFormat df = new SimpleDateFormat("yyyy");
                     System.out.println("Ingrese el año del Vehiculo");
-                    String añostr = read.nextLine();
+                    String añostr = read.next();
                     Date año = df.parse(añostr);
                     System.out.println("Ingrese el tipo de Combustible");
-                    String tipoCombustible = read.nextLine();
+                    String tipoCombustible = read.next();
                     System.out.println("Ingrese la cantidad de puertas");
                     int puertas = leer.nextInt();
                     System.out.println("Ingrese el tipo de Transmision");
-                    String transmision = read.nextLine();
+                    String transmision = read.next();
                     System.out.println("Ingrese el numero de asientos");
                     int numAsientos = leer.nextInt();
 
@@ -65,17 +79,31 @@ public class Lab3P2_DanielElvir {
                     System.out.println("Ingrese la placa de la Motocicleta");
                     System.out.println("Recuerde el formato de 3 caracteres y 4 digitos");
                     String placa = read.nextLine();
+                    if (placa.length()>0&&placa.length()<7) {
+                        System.out.println("La placa es muy larga");
+                        break;
+                    }
+                    
+                    if (placa.charAt(0)!='B') {
+                        System.out.println("La placa debe iniciar con B");
+                        break;
+                    }
+                    
+                    if (!validarPlaca(placa)) {
+                        System.out.println("No ingresó el formato especifico");
+                        break;
+                    }
                     System.out.println("Ingrese la Marca de la Motocicleta");
-                    String marca = read.nextLine();
+                    String marca = read.next();
                     System.out.println("Ingrese el Modelo del Motocicleta");
-                    String modelo = read.nextLine();
+                    String modelo = read.next();
                     System.out.println("Ingrese el tipo de la Motocicleta");
-                    String tipo = read.nextLine();
+                    String tipo = read.next();
                     System.out.println("Ingrese el color de la Motocicleta");
                     Color color = color = JColorChooser.showDialog(null, "Seleccione un color", Color.WHITE);
                     DateFormat df = new SimpleDateFormat("yyyy");
                     System.out.println("Ingrese el año del la Motocicleta");
-                    String añostr = read.nextLine();
+                    String añostr = read.next();
                     Date año = df.parse(añostr);
                     System.out.println("Ingrese la velocidad maxima de la motocicleta en Km/h");
                     double velocidad = leer.nextDouble();
@@ -92,18 +120,32 @@ public class Lab3P2_DanielElvir {
                 case "3": {
                     System.out.println("Ingrese la placa del Autobus");
                     System.out.println("Recuerde el formato de 3 caracteres y 4 digitos");
-                    String placa = read.nextLine();
+                    String placa = read.next();
+                    if (placa.length()>0&&placa.length()<7) {
+                        System.out.println("La placa es muy larga");
+                        break;
+                    }
+                    
+                    if (placa.charAt(0)!='H') {
+                        System.out.println("La placa debe iniciar con H");
+                        break;
+                    }
+                    
+                    if (!validarPlaca(placa)) {
+                        System.out.println("No ingresó el formato especifico");
+                        break;
+                    }
                     System.out.println("Ingrese la Marca del Autobus");
-                    String marca = read.nextLine();
+                    String marca = read.next();
                     System.out.println("Ingrese el Modelo del Autobus");
-                    String modelo = read.nextLine();
+                    String modelo = read.next();
                     System.out.println("Ingrese el tipo del Autobus");
-                    String tipo = read.nextLine();
+                    String tipo = read.next();
                     System.out.println("Ingrese el color del Autobus");
                     Color color = color = JColorChooser.showDialog(null, "Seleccione un color", Color.WHITE);
                     DateFormat df = new SimpleDateFormat("yyyy");
                     System.out.println("Ingrese el año del Autobus");
-                    String añostr = read.nextLine();
+                    String añostr = read.next();
                     Date año = df.parse(añostr);
                     System.out.println("Ingrese la Capacidad de pasajeros que puede llevar el autobus");
                     int capacidad = leer.nextInt();
@@ -520,5 +562,21 @@ public class Lab3P2_DanielElvir {
         }
         return "Invalido";
 
+    }
+    
+    public static boolean validarPlaca(String placa){
+        for (int i = 0; i < 3; i++) {
+            if (!Character.isLetter(placa.charAt(i))) {
+                return false;
+            }
+        }
+        
+        for (int i = 3; i < 7; i++) {
+            if (!Character.isDigit(placa.charAt(i))) {
+                return false;
+            }
+        }
+        
+        return true;
     }
 }
