@@ -68,6 +68,11 @@ public class Vehiculo {
     public void setAño(Date Año) {
         this.Año = Año;
     }
+
+    @Override
+    public String toString() {
+        return "\n" + "Placa=" + Placa +"\n" + "Marca=" + Marca +"\n" + "Modelo=" + Modelo +"\n" + "Tipo=" + Tipo +"\n" + "color=" + color +"\n" + "Año" + Año +"\n" ;
+    }
     
     
     

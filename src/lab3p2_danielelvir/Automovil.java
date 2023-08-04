@@ -54,6 +54,11 @@ public class Automovil extends Vehiculo {
     public void setNumAsiento(int numAsiento) {
         this.numAsiento = numAsiento;
     }
+
+    @Override
+    public String toString() {        
+        return super.toString() +"TipoCombustible=" + TipoCombustible +"\n" + "TipoTransmision=" + TipoTransmision +"\n" + "numPuertas=" + numPuertas +"\n" + "numAsiento=" + numAsiento +"\n" ;
+    }
     
     
 }

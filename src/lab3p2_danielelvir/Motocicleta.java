@@ -18,6 +18,12 @@ public class Motocicleta extends Vehiculo{
         this.Peso = Peso;
         this.Consumo = Consumo;
     }
+
+    @Override
+    public String toString() {       
+        return super.toString()+"VelMax=" + VelMax +"\n" + "Peso=" + Peso +"\n" + "Consumo=" + Consumo + "\n" ;
+    }
+    
     
     
 }
