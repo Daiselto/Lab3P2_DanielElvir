@@ -1,13 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package lab3p2_danielelvir;
 
-/**
- *
- * @author HP
- */
-public class Motocicleta {
+import java.awt.Color;
+import java.util.Date;
+
+
+public class Motocicleta extends Vehiculo{
+    double VelMax, Peso, Consumo;
+
+    public Motocicleta() {
+        super();    
+    }
+
+    public Motocicleta(double VelMax, double Peso, double Consumo, String Placa, String Marca, String Modelo, String Tipo, Color color, Date Año) {
+        super(Placa, Marca, Modelo, Tipo, color, Año);
+        this.VelMax = VelMax;
+        this.Peso = Peso;
+        this.Consumo = Consumo;
+    }
+    
     
 }
