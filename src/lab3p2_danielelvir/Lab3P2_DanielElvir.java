@@ -67,8 +67,8 @@ public class Lab3P2_DanielElvir {
                     DateFormat df = new SimpleDateFormat("yyyy");
                     System.out.println("Ingrese el año del Vehiculo");
                     String añostr = read.next();
-                    if (añostr.length() >= 0 && añostr.length() < 4) {
-                        System.out.println("El tamaño del año no es el correcto");
+                    if (añostr.length() != 4) {
+                        System.out.println("El año debe tener 4 dígitos");
                         break;
                     }
                     Date año = df.parse(añostr);
@@ -120,6 +120,10 @@ public class Lab3P2_DanielElvir {
                     DateFormat df = new SimpleDateFormat("yyyy");
                     System.out.println("Ingrese el año del la Motocicleta");
                     String añostr = read.next();
+                    if (añostr.length() != 4) {
+                        System.out.println("El año debe tener 4 dígitos");
+                        break;
+                    }
                     Date año = df.parse(añostr);
                     System.out.println("Ingrese la velocidad maxima de la motocicleta en Km/h");
                     double velocidad = leer.nextDouble();
@@ -167,6 +171,10 @@ public class Lab3P2_DanielElvir {
                     DateFormat df = new SimpleDateFormat("yyyy");
                     System.out.println("Ingrese el año del Autobus");
                     String añostr = read.next();
+                    if (añostr.length() != 4) {
+                        System.out.println("El año debe tener 4 dígitos");
+                        break;
+                    }
                     Date año = df.parse(añostr);
                     System.out.println("Ingrese la Capacidad de pasajeros que puede llevar el autobus");
                     int capacidad = leer.nextInt();
@@ -536,7 +544,7 @@ public class Lab3P2_DanielElvir {
                         Vehiculo vehic = Vehiculo.get(index - 1);
                         if (index >= 1 && index <= Vehiculo.size()) {
                             if (vehic instanceof Automovil) {
-                                Base += 1200;                                
+                                Base += 1200;
                                 System.out.println("Atributos de el vehiculo seleccionado");
                                 System.out.println(vehic.toString());
                                 System.out.println("Su tasa vehicular es " + Base);
