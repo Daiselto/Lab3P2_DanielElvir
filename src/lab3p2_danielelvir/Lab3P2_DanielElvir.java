@@ -19,7 +19,7 @@ public class Lab3P2_DanielElvir {
     public static void main(String[] args) throws ParseException {
         boolean seguir = true;
         while (seguir) {
-            read=new Scanner(System.in);
+            read = new Scanner(System.in);
             System.out.println("Bienvenido al Registro Vehicular");
             System.out.println("1. Agregar Automovil");
             System.out.println("2. Agregar Motocicleta");
@@ -36,20 +36,26 @@ public class Lab3P2_DanielElvir {
                     System.out.println("Ingrese la placa del Automovil");
                     System.out.println("Recuerde el formato de 3 caracteres y 4 digitos");
                     String placa = read.next();
-                    if (placa.length()>0&&placa.length()<7) {
+                    if (placa.length() > 0 && placa.length() < 7) {
                         System.out.println("La placa es muy larga");
                         break;
                     }
-                    
-                    if (placa.charAt(0)!='H') {
+
+                    if (placa.charAt(0) != 'H') {
                         System.out.println("La placa debe iniciar con H");
                         break;
                     }
-                    
+
                     if (!validarPlaca(placa)) {
                         System.out.println("No ingresó el formato especifico");
                         break;
                     }
+
+                    if (existePlaca(placa)) {
+                        System.out.println("La placa ya está registrada, ingrese una nueva placa");
+                        break;
+                    }
+
                     System.out.println("Ingrese la Marca del Automovil");
                     String marca = read.next();
                     System.out.println("Ingrese el Modelo del Automovil");
@@ -61,6 +67,10 @@ public class Lab3P2_DanielElvir {
                     DateFormat df = new SimpleDateFormat("yyyy");
                     System.out.println("Ingrese el año del Vehiculo");
                     String añostr = read.next();
+                    if (añostr.length() >= 0 && añostr.length() < 4) {
+                        System.out.println("El tamaño del año no es el correcto");
+                        break;
+                    }
                     Date año = df.parse(añostr);
                     System.out.println("Ingrese el tipo de Combustible");
                     String tipoCombustible = read.next();
@@ -80,18 +90,23 @@ public class Lab3P2_DanielElvir {
                     System.out.println("Ingrese la placa de la Motocicleta");
                     System.out.println("Recuerde el formato de 3 caracteres y 4 digitos");
                     String placa = read.nextLine();
-                    if (placa.length()>0&&placa.length()<7) {
+                    if (placa.length() > 0 && placa.length() < 7) {
                         System.out.println("La placa es muy larga");
                         break;
                     }
-                    
-                    if (placa.charAt(0)!='B') {
+
+                    if (placa.charAt(0) != 'B') {
                         System.out.println("La placa debe iniciar con B");
                         break;
                     }
-                    
+
                     if (!validarPlaca(placa)) {
                         System.out.println("No ingresó el formato especifico");
+                        break;
+                    }
+
+                    if (existePlaca(placa)) {
+                        System.out.println("La placa ya está registrada, ingrese una nueva placa");
                         break;
                     }
                     System.out.println("Ingrese la Marca de la Motocicleta");
@@ -122,18 +137,23 @@ public class Lab3P2_DanielElvir {
                     System.out.println("Ingrese la placa del Autobus");
                     System.out.println("Recuerde el formato de 3 caracteres y 4 digitos");
                     String placa = read.next();
-                    if (placa.length()>0&&placa.length()<7) {
+                    if (placa.length() > 0 && placa.length() < 7) {
                         System.out.println("La placa es muy larga");
                         break;
                     }
-                    
-                    if (placa.charAt(0)!='H') {
+
+                    if (placa.charAt(0) != 'H') {
                         System.out.println("La placa debe iniciar con H");
                         break;
                     }
-                    
+
                     if (!validarPlaca(placa)) {
                         System.out.println("No ingresó el formato especifico");
+                        break;
+                    }
+
+                    if (existePlaca(placa)) {
+                        System.out.println("La placa ya está registrada, ingrese una nueva placa");
                         break;
                     }
                     System.out.println("Ingrese la Marca del Autobus");
@@ -470,12 +490,12 @@ public class Lab3P2_DanielElvir {
                         if (index >= 1 && index <= Vehiculo.size()) {
                             int f = JOptionPane.showConfirmDialog(null, "Estas seguro de eliminar?");
                             if (f == 0) {
-                                Vehiculo.remove(index-1);
+                                Vehiculo.remove(index - 1);
                                 JOptionPane.showMessageDialog(null, "TV eliminado exitosamente");
                             } else {
                                 JOptionPane.showMessageDialog(null, "No se eliminó el televisor");
                             }
-                            
+
                         } else {
                             System.out.println("Vehiculo no encontrado");
                             break;
@@ -504,31 +524,37 @@ public class Lab3P2_DanielElvir {
                         System.out.println("Debe agregar CUALQUIER vehiculo para generar una boleta");
                         break;
                     } else {
-                        int i=1;
-                        int Base=525;
+                        int i = 1;
+                        int Base = 525;
                         System.out.println("Así se ve la lista de los vehiculos actualmente");
                         for (Vehiculo vehiculo : Vehiculo) {
                             System.out.println(i + ". " + infoVehiculo(vehiculo));
                             i++;
                         }
                         System.out.println("Escoja el vehiculo para conocer su Tasa Vehicular");
-                        int index=leer.nextInt();   
+                        int index = leer.nextInt();
                         Vehiculo vehic = Vehiculo.get(index - 1);
-                        if (index>=1&&index<=Vehiculo.size()) {
+                        if (index >= 1 && index <= Vehiculo.size()) {
                             if (vehic instanceof Automovil) {
-                                Base+=1200;
+                                Base += 1200;                                
+                                System.out.println("Atributos de el vehiculo seleccionado");
+                                System.out.println(vehic.toString());
                                 System.out.println("Su tasa vehicular es " + Base);
-                            }else if (vehic instanceof Motocicleta) {
-                                Base+=200;
+                            } else if (vehic instanceof Motocicleta) {
+                                Base += 200;
+                                System.out.println("Atributos de el vehiculo seleccionado");
+                                System.out.println(vehic.toString());
                                 System.out.println("Su tasa vehicular es " + Base);
-                            }else if (vehic instanceof Autobus) {
-                                Base+=1000;
+                            } else if (vehic instanceof Autobus) {
+                                Base += 1000;
+                                System.out.println("Atributos de el vehiculo seleccionado");
+                                System.out.println(vehic.toString());
                                 System.out.println("Su tasa vehicular es " + Base);
-                            }else{
+                            } else {
                                 System.out.println("Indice invalido");
                                 break;
                             }
-                        }else{
+                        } else {
                             System.out.println("Indice invalido");
                             break;
                         }
@@ -550,7 +576,6 @@ public class Lab3P2_DanielElvir {
             }
         }
     }
-    
 
     public static String infoVehiculo(Vehiculo vehiculo) {
 
@@ -564,20 +589,29 @@ public class Lab3P2_DanielElvir {
         return "Invalido";
 
     }
-    
-    public static boolean validarPlaca(String placa){
+
+    public static boolean validarPlaca(String placa) {
         for (int i = 0; i < 3; i++) {
             if (!Character.isLetter(placa.charAt(i))) {
                 return false;
             }
         }
-        
+
         for (int i = 3; i < 7; i++) {
             if (!Character.isDigit(placa.charAt(i))) {
                 return false;
             }
         }
-        
+
         return true;
+    }
+
+    public static boolean existePlaca(String placa) {
+        for (Vehiculo vehiculo : Vehiculo) {
+            if (vehiculo.getPlaca().equals(placa)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
