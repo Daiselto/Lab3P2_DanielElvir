@@ -2,12 +2,15 @@
 package lab3p2_danielelvir;
 
 import java.awt.Color;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JColorChooser;
 public class Vehiculo {
     private String Placa, Marca, Modelo, Tipo;
     private Color color;
     private Date Año;
+    private DateFormat df = new SimpleDateFormat("yyyy");
 
     public Vehiculo() {
     }
@@ -71,7 +74,7 @@ public class Vehiculo {
 
     @Override
     public String toString() {
-        return "\n" + "Placa=" + Placa +"\n" + "Marca=" + Marca +"\n" + "Modelo=" + Modelo +"\n" + "Tipo=" + Tipo +"\n" + "color=" + color +"\n" + "Año" + Año +"\n" ;
+        return "\n" + "Placa=" + Placa +"\n" + "Marca=" + Marca +"\n" + "Modelo=" + Modelo +"\n" + "Tipo=" + Tipo +"\n" + "color=" + color +"\n" + "Año=" + df.format(Año) +"\n" ;
     }
     
     
