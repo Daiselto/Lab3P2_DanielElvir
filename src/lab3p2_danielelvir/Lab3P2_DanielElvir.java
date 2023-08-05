@@ -19,6 +19,7 @@ public class Lab3P2_DanielElvir {
     public static void main(String[] args) throws ParseException {
         boolean seguir = true;
         while (seguir) {
+            read=new Scanner(System.in);
             System.out.println("Bienvenido al Registro Vehicular");
             System.out.println("1. Agregar Automovil");
             System.out.println("2. Agregar Motocicleta");
